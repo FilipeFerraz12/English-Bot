@@ -1,14 +1,18 @@
-from openai import OpenAI
+import openai
 import os
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 def correct_english_text(user_input):
-    prompt = f"""..."""
-    response = client.chat.completions.create(
+    prompt = f"""
+You are an English tutor. Correct the following sentence, explain the mistake briefly, and suggest an improved version. Keep it short.
+
+User: "{user_input}"
+"""
+    response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
-            {"role": "system", "content": "..."},
+            {"role": "system", "content": "You are a kind and helpful English conversation tutor."},
             {"role": "user", "content": prompt}
         ]
     )
