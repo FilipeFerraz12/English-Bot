@@ -1,0 +1,8 @@
+flask
+twilio
+openai
+python-dotenv
+google-cloud-speech
+pydub
+gunicorn
+requests
