@@ -11,11 +11,11 @@ You are an English tutor. Correct the following sentence, explain the mistake br
 
 User: "{user_input}"
 """
-    response = client.chat.completions.create(
-        model="gpt-4",
-        messages=[
-            {"role": "system", "content": "You are a kind and helpful English conversation tutor."},
-            {"role": "user", "content": prompt}
-        ]
-    )
+    response = openai.ChatCompletion.create(
+    model="gpt-3.5-turbo",  # altere para um modelo que você tem acesso
+    messages=[
+        {"role": "system", "content": "You are a kind and helpful English conversation tutor."},
+        {"role": "user", "content": prompt}
+    ]
+)
     return response.choices[0].message.content.strip()
