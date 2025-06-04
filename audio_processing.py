@@ -4,7 +4,6 @@ from pydub import AudioSegment
 from dotenv import load_dotenv
 load_dotenv()
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
 
 def transcribe_audio(audio_file):
     client = speech.SpeechClient()
