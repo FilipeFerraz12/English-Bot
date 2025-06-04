@@ -1,6 +1,6 @@
 flask
 twilio
-openai
+openai==0.28.1
 python-dotenv
 google-cloud-speech
 pydub
