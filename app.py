@@ -14,10 +14,6 @@ def whatsapp_reply():
     resp = MessagingResponse()
     msg = resp.message()
 
-@app.route("/", methods=["GET"])
-def index():
-    return "English Bot is running!"
-    
     if media_url:
         r = requests.get(media_url)
         with open("audio.ogg", "wb") as f:
@@ -30,6 +26,10 @@ def index():
         msg.body(feedback)
 
     return str(resp)
+
+@app.route("/", methods=["GET"])
+def index():
+    return "English Bot is running!"
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
